@@ -1,0 +1,667 @@
+body{
+    padding-top: 0px;
+}
+
+.container {
+    display: flex;
+    max-width: 1440px;
+    width: 53%;
+    margin: auto;
+    outline: 0;
+    /* background-color: blueviolet; */
+}
+
+.display-container {
+    width: 50%;
+    padding: 25px 25px 10px 25px;
+    display: flex;
+    flex-direction: column;
+    background: #2E2D33;
+    border: 1px solid;
+    border-radius: 21px;
+    box-shadow: 1px -5px 8px 3px #ccc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/****** NEW DESIGN *********/
+.memory-case {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.3rem;
+    padding: 2%;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 35%;
+    margin-top: 16px;
+    margin-left: 18px;
+    background-color: white;
+    border-color: transparent;
+}
+
+.memory-screen {
+    text-align: right;
+    font-family: digital;
+    font-size: 2rem;
+}
+/********* NEW DESIGN ENDS **********/
+
+.sibling {
+    display: block;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    /* margin: auto; */
+ }
+
+ .screen__header-text, .inmemory__header-text {
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 20px;
+}
+
+.screen__body {
+    /* padding: 0 5%; */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logs__table {
+    border-collapse: separate;
+    border-spacing: 0px 12px;
+}
+
+.logs__column {
+    display: flex;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 8px 5px;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.logs {
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logs__index {
+    text-align: left;
+    color: white;
+    margin-right: 10px;
+}
+
+/************************ SHOW HISTORY *******************/
+ 
+.second__screen-show-history {
+    position: relative;
+    border-radius: 21px;
+    background: #2E2D33;
+    border: 1px solid;
+    box-shadow: inset 0 -2px 1px 0 rgba(255,255,255,.16), inset 0 0 0 2px rgba(0,0,0,.2);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    cursor: pointer;
+    animation-name: showHistory;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-play-state: play;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    text-align: center;
+    z-index: 1;
+ }
+
+ @keyframes showHistory {
+    0% {
+        transform: translateX(-210px);
+        z-index: -1;
+    }
+    100% {
+       transform: translateX(0px);
+       z-index: -1;
+    }
+ }
+
+.second__screen-show-history {
+    width: 40%;
+    text-align: center;
+}
+
+/************************ HIDE HISTORY *******************/
+ 
+.second__screen-hide-history {
+    position: relative;
+    width: 40%;
+    border-radius: 21px;
+    background: #2E2D33;
+    box-shadow: inset 0 -2px 1px 0 rgba(255,255,255,.16), inset 0 0 0 2px rgba(0,0,0,.2);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    cursor: pointer;
+    text-align: center;
+    animation-name: hideHistory;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-play-state: play;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+ }
+
+
+ @keyframes hideHistory {
+    0% {
+        transform: translateX(0px);
+         z-index: -1;
+    }
+
+    100% {
+        transform: translateX(-280px);
+        z-index: -1;
+    }
+ }
+
+ /************************ REMOVE ALL *******************/
+ 
+.second__screen-removeall {
+    position: relative;
+    border-radius: 21px;
+    background: #2E2D33;
+    border: 1px solid;
+    box-shadow: inset 0 -2px 1px 0 rgba(255,255,255,.16), inset 0 0 0 2px rgba(0,0,0,.2);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    cursor: pointer;
+    animation-name: removeall;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-play-state: play;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+ }
+
+ @keyframes removeall {
+    0% {
+        transform: translateX(0px);
+    }
+
+    5% {
+        visibility: hidden;
+     }
+
+    25% {
+       transform: translateX(-50px);
+       visibility: hidden;
+    }
+
+    50% {
+        transform: translateX(-100px);
+        visibility: hidden;
+     }
+   
+    100% {
+       transform: translateX(-250px);
+       visibility: hidden;
+    }
+ }
+
+ 
+
+ .view:hover #one { 
+    transform-origin: 50% 0%;
+    animation-name: first;
+    animation-duration: 200ms;
+    animation-iteration-count: 1;
+    animation-play-state: play;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    filter: brightness(104%);
+}
+
+.view:hover #two {
+    transform-origin: 50% 100%;
+    animation-name: second;
+    animation-duration: 200ms;
+    animation-iteration-count: 1;
+    animation-play-state: play;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    filter: brightness(60%);
+}
+
+
+@keyframes first {
+    0% {
+       transform: none;
+    }
+    95% {
+       transform: rotateX(60deg);
+    }
+    100% {
+       transform: rotateX(60deg);
+    }
+ }
+ 
+ @keyframes second {
+    0% {
+       top: 100px;
+       transform: none;
+    }
+    95% {
+       top: 18px;
+       transform: rotateX(-45deg);
+    }
+    100% {
+       top: 1px;
+       transform: rotateX(-59deg);
+    }
+ }
+/*** SECOND SCREEN ***/
+
+/****** ANIMATIONS ******/
+
+/*********** SHOW ONE HIDE ONE ***************/
+.second__screen-hide-one {
+    display: flex;
+    width: 60%;
+    animation: histhide 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.second__screen-hide-one {
+    background-color: #2E2D33;
+    width: 40%;
+    color: white;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: transparent;
+}
+
+@keyframes histhide {
+    0%   {transform:translateX(0px); z-index: 1;}
+    50%  {z-index: -1;}
+    100% {transform:translateX(-100px); z-index: -1;}
+}
+
+.second__screen-show-one {
+    display: flex;
+    width: 60%;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    /* animation: historyin 1s ease-in-out;
+    animation-fill-mode: forwards; */
+}
+
+.second__screen-show-one div {
+    background-color: #2E2D33;
+    width: 40%;
+    color: white;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: transparent;
+    transition: filter .1s linear;
+   z-index: 10;
+}
+
+.second__screen-show-one div:nth-child(2) {
+    border-color: black;
+}
+
+
+@keyframes historyin {
+    0%   {transform:translateX(-200px); z-index: 1;}
+    50%  {z-index: 1;}
+    100% {transform:translateX(0px);}
+}
+
+/*********** SHOW ONE HIDE ONE ***************/
+
+/* [ngClass]="{'staticClass': staticCount === 0, 'second__screen-hide' : hideHist} */
+
+/***** SHOW TWO HIDE TWO */
+
+.second__screen-hide-two {
+    display: flex;
+    width: 60%;
+    animation: twohide 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.second__screen-hide-two div {
+    background-color: #2E2D33;
+    width: 40%;
+    color: white;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: #2E2D33;
+}
+
+@keyframes twohide {
+    0%   {transform:translateX(0px); z-index: 1;}
+    25%  {z-index: -1;}
+    100% {transform:translateX(-320px); z-index: -1;}
+}
+
+
+
+.second__screen-show-two {
+    display: flex;
+    width: 60%;
+    animation: twomoveout 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.second__screen-show-two div {
+    background-color: #2E2D33;
+    width: 40%;
+    color: white;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: #2E2D33;
+}
+
+.second__screen-show-two div:nth-child(2) {
+    border-color: transparent;
+    border-color: black;
+}
+
+@keyframes twomoveout {
+    0%   {transform:translateX(-200px); z-index: 1;}
+    25%  {z-index: -1;}
+    100% {transform:translateX(0px);}
+}
+
+/***** SHOW TWO HIDE TWO */
+
+/* 'second__screen-show-two' : showAll, 'second__screen-hide-two' : hideAll,  */
+
+/************* SHOW MEM HIDE MEM **************/
+.second__screen-hide-mem {
+    display: flex;
+    width: 60%;
+    animation: memoryhide 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.second__screen-hide-mem {
+    background-color: #2E2D33;
+    width: 40%;
+    color: white;
+    color: yellow;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: black;
+}
+
+@keyframes memoryhide {
+    0%   {transform:translateX(0px); z-index: 1;}
+    25%  {z-index: -1;}
+    100% {transform:translateX(-280px); z-index: -1;}
+}
+
+.second__screen-show-mem {
+    display: flex;
+    width: 60%;
+    animation: memmoveout 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.second__screen-show-mem div {
+    background-color: #2E2D33;
+    width: 40%;
+    color: white;
+    color: yellow;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: black;
+}
+
+@keyframes memmoveout {
+    0%   {transform:translateX(-200px); z-index: 1;}
+    25%  {z-index: -1;}
+    100% {transform:translateX(0px);}
+}
+
+.staticClass {
+    display: none;
+}
+
+/********* ANIMATIONS END **********/
+
+
+.logs__screen {
+    width: 25%;
+    /* border-right: 1px solid; */
+    /* 'staticClass': count === 0, */
+/* 'staticClass': count === 0, */
+    background-color: #2E2D33;
+    color: white;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: transparent;
+}
+
+.logs__screen-show {
+    width: 25%;
+    /* border-right: 1px solid; */
+    background-color: #2E2D33;
+    color: white;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: transparent;
+    animation: logmoveout 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes logmoveout {
+    0%   { transform:translateX(-300px); z-index: -1; }
+    50%  { z-index: -1; }
+    100% {transform:translateX(0px); }
+}
+
+.logs__screen-hide {
+    width: 25%;
+    /* border-right: 1px solid; */
+    background-color: #2E2D33;
+    color: white;
+    border: 1px solid;
+    border-radius: 21px;
+    animation: logmovein 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes logmovein {
+    0%   { transform:translateX(0px); }
+    25%  { z-index: -1; }
+    50%  { z-index: -1; }
+    100% { transform:translateX(-200px); z-index: -1;}
+}
+
+.inmemory__screen {
+    width: 25%;
+    background-color: #2E2D33;
+    color: white;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: transparent;
+    animation: memmoveout 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* [ngClass]="{'inmemory__screen-hide' : hideMem, 'inmemory__screen-show' : showMem}" */
+
+.inmemory__screen-show {
+    width: 25%;
+    background-color: #2E2D33;
+    color: white;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: transparent;
+    animation: memmoveout 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes memmoveout {
+    0%   {transform:translateX(-153px); z-index: -2;}
+    25%  {z-index: -1;}
+    50%  {z-index: -1;}
+    100% {transform:translateX(0px);}
+}
+
+
+.inmemory__screen-hide {
+    width: 25%;
+    background-color: #2E2D33;
+    color: white;
+    border: 1px solid;
+    border-radius: 21px;
+    border-color: transparent;
+    animation: memmovein 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes memmovein {
+    0%   {transform:translateX(0px); z-index: 1;}
+    25%  {z-index: -2;}
+    50%  {z-index: -2;}
+    75%  {z-index: -2;}
+    100% {transform:translateX(-153px); z-index: -2;}
+}
+
+
+.inmemory__header-text {
+    text-align: center;
+}
+
+.inmemory {
+    color: white;
+    text-align: center;
+    border-color: #2E2D33;
+    margin-left: 60px;
+}
+
+/***** SECOND SCREEN ENDS ******/
+
+
+
+/* FIRST SCREEN CONTINUES */
+.msg-class {
+    font-size: 2.2rem;
+    padding-top: 1rem;
+}
+
+.cube-root {
+    font-size: 1rem;
+    padding-right: 15px;
+}
+
+.bigfont {
+    font-size: 3rem;
+}
+
+.display-screen {
+    background-color: #9BAA76;
+    color: black;
+    height: 3.5rem;
+    padding-right: 3%;
+    padding-top: 1rem;
+    text-align: right;
+    font-family: digital;
+    border: 1px solid;
+    border-radius: 21px;
+    width: 91%;
+    margin: auto;
+}
+
+.punch-keys-sect {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.table-of-data {
+    height: 20rem;
+    border-collapse: separate;
+    border-spacing: 15px 15px;
+    width: 100%;
+}
+
+.space {
+    background-color: tomato;;
+}
+
+.key {
+    background-color:rgba(0,0,0,0.6);
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 5px;
+    column-width: 200px;
+    padding: 3px;
+    opacity: 0.8;
+}
+
+.border-black {
+    border-color: black;
+    font-size: 1.1rem;
+    padding: 7px;
+}
+
+.key:hover {
+    opacity: 1;
+}
+
+.numkey, .percent__key {
+    background-color: #58595B;
+    border-color: transparent;
+}
+
+.numkey:active {
+    background-color: #841F27;
+    background-color: yellow;
+}
+
+.power{
+    background-color: #841F27;
+    text-align: center;
+    border-color: transparent;
+    font-size: 1.2rem;
+    padding: 8px 0;
+    opacity: 1;
+}
+
+.history__screen-control, .memory__screen-control {
+    background-color: yellow;
+    text-align: center;
+    border-color: transparent;
+    font-size: 1.2rem;
+    padding: 8px 0;
+    opacity: 1;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rowsdata td {
+    text-align: center;
+}
+
+.opkey {
+    color: white;
+}
+
+.opkey:active {
+    background-color: yellow;
+  }
+
+.equalkey {
+    color: white;
+    background-color: orangered;
+    filter: brightness(231%);
+    border-color: transparent;
+}
